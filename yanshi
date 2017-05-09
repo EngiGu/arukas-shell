@@ -26,7 +26,6 @@ echo
 #crontab -e $m * * * * /root/a.sh
 #service crond start
 echo "$m * * * * /root/a.sh" >> /var/spool/cron/root
-/sbin/service crond restart
 echo -e "\e[1;35m=============================================================\e[0m"
 echo -e "\033[36m                      请等待三秒...\033[0m"
 echo -e "\e[1;35m=============================================================\e[0m"
