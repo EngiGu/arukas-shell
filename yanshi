@@ -22,9 +22,9 @@ echo
         echo -e "已设置定时为 = $m分钟"
         echo -e "---------------------------"
         echo -e
-/*yum install vixie-cron -y
-crontab -e $m * * * * /root/a.sh
-service crond start*/
+#yum install vixie-cron -y
+#crontab -e $m * * * * /root/a.sh
+#service crond start
 echo "$m * * * * /root/a.sh" >> /var/spool/cron/root
 echo -e "\e[1;35m=============================================================\e[0m"
 echo -e "\033[36m                      请等待三秒...\033[0m"
