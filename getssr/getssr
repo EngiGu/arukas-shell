@@ -3,9 +3,10 @@ dire="/home/wwwroot/default/arukas-getssr/"
 [ -d "$dire" ] && rmdir "$dire"
 mkdir "$dire"
 cd /home/wwwroot/default/arukas-getssr/
-wget -N https://raw.githubusercontent.com/EngiGu/crontab/master/baidumap/sign.php
+wget -N https://raw.githubusercontent.com/EngiGu/arukas-shell/master/getssr/api.php
+wget -N https://raw.githubusercontent.com/EngiGu/arukas-shell/master/getssr/index.html
 dire="/home/wwwroot/default/arukas-getssr/js/"
 [ -d "$dire" ] && rmdir "$dire"
 mkdir "$dire"
 cd /home/wwwroot/default/arukas-getssr/js/
-wget -N https://raw.githubusercontent.com/EngiGu/crontab/master/baidumap/BDUSS.ini
+wget -N https://raw.githubusercontent.com/EngiGu/arukas-shell/master/getssr/js/app.js
