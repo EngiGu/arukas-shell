@@ -25,7 +25,11 @@ echo
 #yum install vixie-cron -y
 #crontab -e $m * * * * /root/a.sh
 #service crond start
+yum -y install vixie-cron
+yum -y install crontabs
+service crond restart
 echo "$m * * * * /root/a.sh" >> /var/spool/cron/root
+service crond start
 echo -e "\e[1;35m=============================================================\e[0m"
 echo -e "\033[36m                      请等待三秒...\033[0m"
 echo -e "\e[1;35m=============================================================\e[0m"
