@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+<!--Beautify and optimize By Jonvi-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Online Generation of High-Speed, Secure, Temporary SS Account, Just a few Seconds">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <title>Get A SS</title>
+    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.1.5/vue.js"></script>
+    <script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js"></script>
+    <link href="https://v4.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+    <script src="//cdn.bootcss.com/crypto-js/3.1.9/crypto-js.js"></script>
+    <script src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  <style>
+.container-fluid {
+    width: 100%;
+    overflow-x: auto;
+}
+.jumbotron{
+background: #5bc0de;
+color: #f4f3ee;
+}
+    </style>
+</head>
+
+<body style="text-align:center;">
+<div id="app">
+<div class="jumbotron">
+            <h1>Get A SS</h1>
+        <p>Online Generation of High-Speed, Secure, Temporary SS Account, Just a few Seconds</p>
+ </div>
+  <button type="button" class="btn btn-info" @click="newConfig" style="margin-bottom:35px">Generate Now</button>
+<div class="container-fluid" >
+    <table class="table table-hover table-bordered container-fluid" v-show="configs">
+        <tr>
+            <th>Server</th>
+            <td v-for="conf in configs">{{conf.host}}</td>
+        </tr>
+        <tr>
+            <th>Port</th>
+            <td v-for="conf in configs">{{conf.service_port}}</td>
+        </tr>
+        <tr>
+            <th>Passwd</th>
+            <td v-for="conf in configs">{{conf.pwd}}</td> <!--输出密码-->
+        </tr>
+		<tr>
+            <th>Lock</th>
+            <td v-for="conf in configs">{{conf.lock}}</td> <!--输出加密方式-->
+        </tr>
+        <tr>
+            <th>Qrcode</th>
+            <td v-for="conf in configs">
+                <div :id="conf.service_port">
+                  <input class="form-control" readonly="true" size="10" type="text" :value="conf.ss_url"> <!--若需开启URL显示，请取消注释此行-->
+                  <button class="btn btn-info"@click="showQrCode(conf.ss_url,conf.service_port)" style="margin-bottom: 10px" >Show</button><br />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+<script type="text/javascript" src="./js/app.js"></script>
+<footer>
+                <p>© <a href="https://wo.ci/toss/ssincurl-arukas-api-gass.html" target="_blank">About Script</a> / <a href="https://github.com/bestK/ssincurl" target="_blank">ssincurl</a> / <a href="https://arukas.io" target="_blank">Arukas</a></p>
+</footer>
+</body>
+</html>
