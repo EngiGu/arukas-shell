@@ -1,0 +1,11 @@
+#!/bin/sh
+dire="/home/wwwroot/default/arukas-getssr/"
+[ -d "$dire" ] && rmdir "$dire"
+mkdir "$dire"
+cd /home/wwwroot/default/arukas-getssr/
+wget -N https://raw.githubusercontent.com/EngiGu/crontab/master/baidumap/sign.php
+dire="/home/wwwroot/default/arukas-getssr/js/"
+[ -d "$dire" ] && rmdir "$dire"
+mkdir "$dire"
+cd /home/wwwroot/default/arukas-getssr/js/
+wget -N https://raw.githubusercontent.com/EngiGu/crontab/master/baidumap/BDUSS.ini
