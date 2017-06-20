@@ -1,0 +1,9 @@
+#!/bin/sh
+dire="/home/wwwroot/default/getarukas/"
+[ -d "$dire" ] && rmdir "$dire"
+mkdir "$dire"
+cd /home/wwwroot/default/getarukas/
+wget -N https://raw.githubusercontent.com/EngiGu/arukas-shell/master/getarukas/getarukas.php
+ip=`curl -s http://members.3322.org/dyndns/getip`;
+echo "完成樱花云信息获取"
+echo "网址链接是: http://$ip:1234/getarukas/getarukas.php"
