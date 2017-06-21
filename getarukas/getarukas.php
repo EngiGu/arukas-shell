@@ -163,7 +163,7 @@ $html=<<<"ht"
             <div class="ui-list-info">
                 <h4>SSR链接</h4>
             </div>
-            <input type="text" size="1" id="url"  AutoComplete="off" value="$ssrurl">
+            <textarea cols="1" rows="1" id="url" AutoComplete="off">$ssrurl</textarea>
 <input type="button" value="点击复制" onClick="copyUrl()">
 <script type="text/javascript">
 function copyUrl()
