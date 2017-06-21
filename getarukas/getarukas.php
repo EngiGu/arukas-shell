@@ -164,16 +164,16 @@ $html=<<<"ht"
                 <h4>SSR链接</h4>
             </div>
             <textarea cols="1" rows="1" id="url" AutoComplete="off">$ssrurl</textarea>
-<input type="button" value="点击复制" onClick="copyUrl()">
-<script type="text/javascript">
-function copyUrl()
-{
-var Url2=document.getElementById("url");
-Url2.select(); // 选择对象
-document.execCommand("Copy"); // 执行浏览器复制命令
-alert("已复制好，可贴粘。");
-}
-</script>
+            <input type="button" value="点击复制" onClick="copyUrl()">
+            <script type="text/javascript">
+            function copyUrl()
+            {
+            var Url2=document.getElementById("url");
+            Url2.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
+            }
+            </script>
         </li>
         <li class="ui-border-t">
             <div class="ui-list-info">
