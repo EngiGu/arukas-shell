@@ -100,10 +100,11 @@ $port=$content->data[0]->attributes->port_mappings[0][0]->service_port;
 
 //153.125.232.237:31343:auth_sha1:rc4-md5:http_simple:R3ExOTk0MDUwNys=/?obfsparam=bS4xMDAxMC5jb20va3pydw==&remarks=5qix6Iqx5LqR
 $ssrurl="ssr://".base64_encode($host.":".$port.":".$protocol.":".$decodemethod.":".$confusion.":".base64_encode($password)."/?obfsparam=bS4xMDAxMC5jb20va3pydw==&remarks=5qix6Iqx5LqR");
-//echo $ssrurl;
-$qcurl="http://s.jiathis.com/qrcode.php?url=".$ssrurl;
-$img = file_get_contents($qcurl); 
-file_put_contents('ssr.png',$img); 
+echo $ssrurl;
+//已经弃用
+//$qcurl="http://s.jiathis.com/qrcode.php?url=".$ssrurl;
+//$img = file_get_contents($qcurl); 
+//file_put_contents('ssr.png',$img); 
 //echo '<img src="ssr.png">';
 
 
@@ -162,7 +163,7 @@ $html=<<<"ht"
             <div class="ui-list-info">
                 <h4>SSR链接</h4>
             </div>
-            <textarea cols="20" rows="10" style="display:none"  id="biao">$ssrurl</textarea>
+            <textarea cols="1" rows="1" id="biao" vaule="$ssrurl">$ssrurl</textarea>
             <input type="button" onClick="copyUrl()" value="点击复制" />
             <script type="text/javascript">
             function copyUrl()
@@ -178,7 +179,7 @@ $html=<<<"ht"
             <div class="ui-list-info">
                 <h4>SSR二维码</h4>
             </div>
-           <img src="ssr.png" >
+           <img src="http://s.jiathis.com/qrcode.php?url=$ssrurl" >
         </li>
     </ul>
     <div class="ui-txt-remark">
