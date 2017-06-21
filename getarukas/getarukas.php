@@ -199,31 +199,3 @@ ht;
 
 echo $html;
 ?>
-        }
-    curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    $data = curl_exec($curl);
-    return $data;        
-}
-
-//登录成功之后保存cookie
-/*login($cookie);*/
-$cookie = login($returnCookie=1);
-//获取数据
-$result= get_content($cookie);
-/*echo $result;*/
-
-function getNeedBetween($kw1,$mark1,$mark2){
-$kw=$kw1;
-//$kw='123′.$kw.'123′;
-$st =stripos($kw,$mark1);
-$ed =stripos($kw,$mark2);
-if(($st==false||$ed==false)||$st>=$ed)
-return 0;
-$kw=substr($kw,($st+1),($ed-$st-1));
-return $kw;
-}
-$pre_info=getNeedBetween($result, 'mappings' , 'created' );
-echo "\"port_m",$pre_info,"</ br>";
-
-?>
