@@ -1,6 +1,6 @@
 <?php
 function login($returnCookie=1){
-        $post="email=451292130%40qq.com&password=gq19940507";
+        $post="email=15527434825%40163.com&password=gq19940507";
         $url = "https://app.arukas.io/api/login";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -38,7 +38,7 @@ function login($returnCookie=1){
 function get_content($cookie)
 {
     //登录成功之后访问的页面
-    $contextUrl = "https://app.arukas.io/api/containers";
+    $contextUrl = "https://app.arukas.io/api/containers/ca6744fd-4677-4aea-a71e-f2e80f646ca5";
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $contextUrl);
     curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)');
@@ -66,7 +66,7 @@ $content=json_decode($result);
 //var_dump($content);
 
 //得到密码
-$cmd=$content->data[0]->attributes->cmd;
+$cmd=$content->data->attributes->cmd;
 //echo $cmd,"</ br>";
 $tmp=explode(" ", $cmd);
 //var_dump($tmp);
@@ -86,7 +86,7 @@ $confusion=$tmp[9];
 
 
 //得到IP
-$host=$content->data[0]->attributes->port_mappings[0][0]->host;
+$host=$content->data->attributes->port_mappings[0][0]->host;
 //echo $host,"</ br>";
 $tmp=explode(".", $host);
 //var_dump($tmp);
@@ -95,7 +95,7 @@ $host=$tmp[1].'.'.$tmp[2].'.'.$tmp[3].'.'.$tmp[4];
 //echo $host;
 
 //得到端口
-$port=$content->data[0]->attributes->port_mappings[0][0]->service_port;
+$port=$content->data->attributes->port_mappings[0][0]->service_port;
 //echo $port;
 
 //153.125.232.237:31343:auth_sha1:rc4-md5:http_simple:R3ExOTk0MDUwNys=/?obfsparam=bS4xMDAxMC5jb20va3pydw==&remarks=5qix6Iqx5LqR
