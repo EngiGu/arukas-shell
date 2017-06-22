@@ -163,17 +163,20 @@ $html=<<<"ht"
             <div class="ui-list-info">
                 <h4>SSR链接</h4>
             </div>
-            <textarea cols="1" rows="1" id="url" AutoComplete="off">$ssrurl</textarea>
-            <input type="button" value="点击复制" onClick="copyUrl()">
-            <script type="text/javascript">
-            function copyUrl()
-            {
-            var Url2=document.getElementById("url");
-            Url2.select(); // 选择对象
-            document.execCommand("Copy"); // 执行浏览器复制命令
-            alert("已复制好，可贴粘。");
-            }
-            </script>
+                 <form action="">
+      <input type="text" class="share-input"  value="$ssrurl" AutoComplete="off" id="copy-content"/>
+      <button class="copy-button" type="button" onclick="copyContent();"> 点我复制 </button>
+     </form>
+     <script type="text/javascript">
+     /*Copy function implementation */
+        function copyContent(){ 
+        var copyobject=document.getElementById("copy-content");
+        copyobject.select();
+        document.execCommand("Copy");
+        alert("已复制成功哦~"); 
+       };
+      </script>
+ 
         </li>
         <li class="ui-border-t">
             <div class="ui-list-info">
