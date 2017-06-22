@@ -164,7 +164,7 @@ $html=<<<"ht"
                 <h4>SSR链接</h4>
             </div>
                  <form action="">
-      <input type="text" class="share-input"  value="$ssrurl" AutoComplete="off" id="copy-content"/>
+      <input type="text" class="share-input" size="10" value="$ssrurl" AutoComplete="off" id="copy-content"/>
       <button class="copy-button" type="button" onclick="copyContent();"> 点我复制 </button>
      </form>
      <script type="text/javascript">
