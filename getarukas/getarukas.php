@@ -98,7 +98,7 @@ $host=$tmp[1].'.'.$tmp[2].'.'.$tmp[3].'.'.$tmp[4];
 $port=$content->data->attributes->port_mappings[0][0]->service_port;
 //echo $port;
 
-
+//153.125.232.237:31343:auth_sha1:rc4-md5:http_simple:R3ExOTk0MDUwNys=/?obfsparam=bS4xMDAxMC5jb20va3pydw==&remarks=5qix6Iqx5LqR
 $ssrurl="ssr://".base64_encode($host.":".$port.":".$protocol.":".$decodemethod.":".$confusion.":".base64_encode($password)."/?obfsparam=bS4xMDAxMC5jb20va3pydw==&remarks=5qix6Iqx5LqR");
 //echo $ssrurl;
 //已经弃用
@@ -122,13 +122,6 @@ $html=<<<"ht"
     <script type="text/javascript">
         var mainDomain = "http://wap.10010hb.net/weixin";
     </script>
-    <style type="text/css">
-    .comments {
-     width:100%;/*自动适应父布局宽度*/
-     overflow:auto;
-     word-break:break-all;/*在ie中解决断行问题(防止自动变为在一行显示，主要解决ie兼容问题，ie8中当设宽度为100%时，文本域类容超过一行时，当我们双击文本内容就会自动变为一行显示，所以只能用ie的专有断行属性“word-break或word-wrap”控制其断行)*/
-}
-     </style>
 </head>
 <body>
 <div class="page page-netFlow">
@@ -170,19 +163,17 @@ $html=<<<"ht"
             <div class="ui-list-info">
                 <h4>SSR链接</h4>
             </div>
-            <form action="">
-            <input type="text" class="share-input"  value="$ssrurl" AutoComplete="off" size="10" id="copy-content"/>
-            <button class="copy-button" type="button" onclick="copyContent();"> 点击复制 </button>
-            </form>
+            <textarea cols="1" rows="1" id="url" AutoComplete="off">$ssrurl</textarea>
+            <input type="button" value="点击复制" onClick="copyUrl()">
             <script type="text/javascript">
-         /*Copy function implementation */
-        function copyContent(){ 
-        var copyobject=document.getElementById("copy-content");
-        copyobject.select();
-        document.execCommand("Copy");
-        alert("已复制成功哦~"); 
-       };
-      </script>
+            function copyUrl()
+            {
+            var Url2=document.getElementById("url");
+            Url2.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
+            }
+            </script>
         </li>
         <li class="ui-border-t">
             <div class="ui-list-info">
